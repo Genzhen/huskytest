@@ -1,0 +1,36 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "config": {
+    "port": 80
+  },
+  "scripts": {
+    "test": "npm-run-all --parallel test:*",
+    "test:e2e": "scripty",
+    "test:unit": "scripty",
+    "test:webpack": "scripty",
+    "pretest": "npm-run-all lint",
+    "lint": "echo $npm_package_name",
+    "prod": "node scripts/prod.js",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "scripts/**/*.js": "eslint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "husky": "^1.2.0",
+    "npm-run-all": "^4.1.5",
+    "scripty": "^1.8.0",
+    "shell.js": "^3.1.0",
+    "shelljs": "^0.8.3"
+  },
+  "devDependencies": {
+    "lint-staged": "^8.1.0"
+  }
+}
